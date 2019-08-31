@@ -255,7 +255,9 @@ function! importjs#Init()
   if has('win32') || has('win64')
     let s:job_executable='importjs.cmd'
   else
-    let s:job_executable='importjs'
+    " TODO: Make this an option in the vimrc
+    let s:job_executable='nvm exec default importjs'
+    " let s:job_executable='importjs'
   endif
 
   if exists("*jobstart")
